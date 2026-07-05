@@ -22,7 +22,7 @@ def validar_categoria(categoria):
 def validar_precio(precio):
     try:
         val = int(precio)
-        return val > 0
+        return val >= 0
     except ValueError:
         return False
 
@@ -46,7 +46,7 @@ def validar_disponible(opcion):
 def validar_vendidos(vendidos):
     try:
         val = int(vendidos)
-        return val >= 0
+        return val > 0
     except ValueError:
         return False
 
@@ -137,7 +137,7 @@ def agregar_producto(
 
 
 def eliminar_producto(codigo, productos, inventario):
-    cod = cod.strip().upper()
+    cod = codigo.strip().upper()
     if cod in productos:
         del productos[cod]
         del inventario[cod]
