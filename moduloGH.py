@@ -1,5 +1,4 @@
-#MODULO !!!
-
+# MODULO !!!
 
 
 def validar_codigo(codigo, productos):
@@ -10,11 +9,14 @@ def validar_codigo(codigo, productos):
         return False
     return True
 
+
 def validar_nombre(nombre):
     return nombre.strip() != ""
 
+
 def validar_categoria(categoria):
     return categoria.strip() != ""
+
 
 def validar_precio(precio):
     try:
@@ -31,16 +33,21 @@ def validar_stock(stock):
     except ValueError:
         return False
 
-def 
+
+def validar_disponible(opcion):
+    opdis = opcion.strip().lower()
+    if opdis == "s" or opdis == "n":
+        return True
+    else:
+        return False
 
 
-
-
-
-
-
-
-
+def validar_vendidos(vendidos):
+    try:
+        val = int(vendidos)
+        return val >= 0
+    except ValueError:
+        return False
 
 
 def leer_opcion():
@@ -52,4 +59,3 @@ def leer_opcion():
             return -1
     except ValueError:
         return -1
-
